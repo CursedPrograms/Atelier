@@ -1,5 +1,5 @@
 # Atelier
-### Creative Suite
+### Creative & Studio Suite
 
 - https://github.com/CursedPrograms/AetherCanvas-AI
 - https://github.com/CursedPrograms/Changeling-Studio
