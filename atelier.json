@@ -47,6 +47,17 @@
       "exe": "Hymnal.exe",
       "description": "Whole songs, with vocals, from a style: lyrics written for you, covers, remixes, stems, tempo and key.",
       "logo": "https://raw.githubusercontent.com/CursedPrograms/Hymnal/main/assets/logo.png"
+    },
+    {
+      "name": "Terminus",
+      "repo": "CursedPrograms/Terminus",
+      "asset": "Terminus-win64.zip",
+      "setup": "Terminus-setup.exe",
+      "setupArgs": "/VERYSILENT /SUPPRESSMSGBOXES /NORESTART",
+      "appId": "{9B6E2D4C-7A1F-4E3B-8C5D-2F0A6B1E9D73}",
+      "exe": "Terminus.exe",
+      "description": "Photos to a textured 3D model: AliceVision's photogrammetry in three steps, GLB, OBJ and STL out.",
+      "logo": "https://raw.githubusercontent.com/CursedPrograms/Terminus/main/assets/logo.png"
     }
   ]
 }
