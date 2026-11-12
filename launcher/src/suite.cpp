@@ -64,6 +64,16 @@ static std::vector<App> builtIn() {
     App& c = v.back();
     c.exe = "crush.exe"; c.setup = "CRUSH-*-setup.exe"; c.setupArgs = "/VERYSILENT /SUPPRESSMSGBOXES /NORESTART /CURRENTUSER";
     c.appId = "{6E3B1F7A-2C1D-4A5B-9C0E-7F3A1B2C3D4E}"; c.launch = "console";
+    add("Hymnal", "Hymnal-win64.zip", "Whole songs, with vocals, from a style: lyrics written for you, covers, remixes, stems, tempo and key.",
+        "https://raw.githubusercontent.com/CursedPrograms/Hymnal/main/assets/logo.png", "", false);
+    // photos to 3D: its own installer (per user, AliceVision inside); the zip works too
+    add("Terminus", "Terminus-win64.zip", "Photos to a textured 3D model: AliceVision's photogrammetry in three steps, GLB, OBJ and STL out.",
+        "https://raw.githubusercontent.com/CursedPrograms/Terminus/main/assets/logo.png", "", false);
+    App& t = v.back();
+    t.setup = "Terminus-setup.exe"; t.setupArgs = "/VERYSILENT /SUPPRESSMSGBOXES /NORESTART";
+    t.appId = "{9B6E2D4C-7A1F-4E3B-8C5D-2F0A6B1E9D73}";
+    add("Firmament", "Firmament-win64.zip", "360Â° skyboxes from a prompt: look round them, repair the seam, upscale, export cube maps. Needs an NVIDIA card.",
+        "https://raw.githubusercontent.com/CursedPrograms/Firmament/main/cpp/assets/logo.png", "", false);
     return v;
 }
 
