@@ -39,6 +39,14 @@
       "description": "A file compressor, written from scratch, for the command line and Explorer.",
       "logo": "https://raw.githubusercontent.com/CursedPrograms/CRUSH/main/assets/logo.png",
       "plugin": "In Explorer: right-click > Add to CRUSH archive"
+    },
+    {
+      "name": "Hymnal",
+      "repo": "CursedPrograms/Hymnal",
+      "asset": "Hymnal-win64.zip",
+      "exe": "Hymnal.exe",
+      "description": "Whole songs, with vocals, from a style: lyrics written for you, covers, remixes, stems, tempo and key.",
+      "logo": "https://raw.githubusercontent.com/CursedPrograms/Hymnal/main/assets/logo.png"
     }
   ]
 }

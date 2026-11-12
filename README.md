@@ -8,6 +8,7 @@
 - https://github.com/CursedPrograms/Bathos
 - https://github.com/CursedPrograms/Mimic
 - https://github.com/CursedPrograms/CRUSH
+- https://github.com/CursedPrograms/Hymnal
 - https://github.com/CursedPrograms/Mosaic-Mask
 - https://github.com/CursedPrograms/Spatiality
 - https://github.com/CursedPrograms/Acacia-GameEngine
@@ -19,7 +20,7 @@ other as plugins: LayerTack's **Filter > Bathos** and **Filter > Mimic** use the
 
 ![The Atelier launcher](images/launcher.png)
 
-- **The apps:** LayerTack, Bathos, Mimic and CRUSH, each with its logo, its line, the version installed and the latest
+- **The apps:** LayerTack, Bathos, Mimic, CRUSH and Hymnal, each with its logo, its line, the version installed and the latest
   release on GitHub, and **Install**, **Update**, **Launch**, **Uninstall** and **Folder** buttons. **Install all**
   installs or updates everything that's out of date. Downloads show their progress.
 - **Where they go:** `%LOCALAPPDATA%\Programs\<App>`, the same folder each app's own installer uses (and where LayerTack
