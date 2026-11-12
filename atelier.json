@@ -60,6 +60,17 @@
       "logo": "https://raw.githubusercontent.com/CursedPrograms/Terminus/main/assets/logo.png"
     },
     {
+      "name": "Pygmalion",
+      "repo": "CursedPrograms/Pygmalion",
+      "asset": "Pygmalion-win64.zip",
+      "setup": "Pygmalion-setup.exe",
+      "setupArgs": "/VERYSILENT /SUPPRESSMSGBOXES /NORESTART",
+      "appId": "{30C41005-C5F8-461A-878D-A91C1BFA4ACE}",
+      "exe": "Pygmalion.exe",
+      "description": "People in 3D with sliders: MakeHuman remade. Shape, dress, pose, render, and export with the skeleton.",
+      "logo": "https://raw.githubusercontent.com/CursedPrograms/Pygmalion/main/assets/logo.png"
+    },
+    {
       "name": "Firmament",
       "repo": "CursedPrograms/Firmament",
       "asset": "Firmament-win64.zip",

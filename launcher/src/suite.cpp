@@ -72,7 +72,13 @@ static std::vector<App> builtIn() {
     App& t = v.back();
     t.setup = "Terminus-setup.exe"; t.setupArgs = "/VERYSILENT /SUPPRESSMSGBOXES /NORESTART";
     t.appId = "{9B6E2D4C-7A1F-4E3B-8C5D-2F0A6B1E9D73}";
-    add("Firmament", "Firmament-win64.zip", "360Â° skyboxes from a prompt: look round them, repair the seam, upscale, export cube maps. Needs an NVIDIA card.",
+    // people in 3D: MakeHuman remade; its own installer (per user, MakeHuman's assets inside); the zip works too
+    add("Pygmalion", "Pygmalion-win64.zip", "People in 3D with sliders: MakeHuman remade. Shape, dress, pose, render, and export with the skeleton.",
+        "https://raw.githubusercontent.com/CursedPrograms/Pygmalion/main/assets/logo.png", "", false);
+    App& pg = v.back();
+    pg.setup = "Pygmalion-setup.exe"; pg.setupArgs = "/VERYSILENT /SUPPRESSMSGBOXES /NORESTART";
+    pg.appId = "{30C41005-C5F8-461A-878D-A91C1BFA4ACE}";
+    add("Firmament", "Firmament-win64.zip", "360° skyboxes from a prompt: look round them, repair the seam, upscale, export cube maps. Needs an NVIDIA card.",
         "https://raw.githubusercontent.com/CursedPrograms/Firmament/main/cpp/assets/logo.png", "", false);
     return v;
 }
