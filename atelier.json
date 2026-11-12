@@ -1,0 +1,44 @@
+{
+  "about": "The Atelier launcher's catalog: it reads this on every start, so apps can be added here without a new launcher. asset and setup may use * for the version. launch: window, console or none.",
+  "apps": [
+    {
+      "name": "LayerTack",
+      "repo": "CursedPrograms/LayerTack",
+      "asset": "LayerTack-win64.zip",
+      "exe": "LayerTack.exe",
+      "description": "A layer-based image editor: layers, masks, blend modes and filters.",
+      "logo": "https://raw.githubusercontent.com/CursedPrograms/LayerTack/main/cpp/assets/logo.png"
+    },
+    {
+      "name": "Bathos",
+      "repo": "CursedPrograms/Bathos",
+      "asset": "Bathos-win64.zip",
+      "exe": "Bathos.exe",
+      "description": "A picture in, its depth map out. Near is bright, far is dark.",
+      "logo": "https://raw.githubusercontent.com/CursedPrograms/Bathos/main/assets/logo.png",
+      "plugin": "In LayerTack: Filter > Bathos"
+    },
+    {
+      "name": "Mimic",
+      "repo": "CursedPrograms/Mimic",
+      "asset": "Mimic-win64.zip",
+      "exe": "Mimic.exe",
+      "description": "One person's face onto a picture or a video.",
+      "logo": "https://raw.githubusercontent.com/CursedPrograms/Mimic/main/assets/logo.png",
+      "plugin": "In LayerTack: Filter > Mimic"
+    },
+    {
+      "name": "CRUSH",
+      "repo": "CursedPrograms/CRUSH",
+      "asset": "CRUSH-*-win64-portable.zip",
+      "setup": "CRUSH-*-setup.exe",
+      "setupArgs": "/VERYSILENT /SUPPRESSMSGBOXES /NORESTART /CURRENTUSER",
+      "appId": "{6E3B1F7A-2C1D-4A5B-9C0E-7F3A1B2C3D4E}",
+      "exe": "crush.exe",
+      "launch": "console",
+      "description": "A file compressor, written from scratch, for the command line and Explorer.",
+      "logo": "https://raw.githubusercontent.com/CursedPrograms/CRUSH/main/assets/logo.png",
+      "plugin": "In Explorer: right-click > Add to CRUSH archive"
+    }
+  ]
+}

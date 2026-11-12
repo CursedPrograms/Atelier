@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atelier - Creative &amp; Studio Suite</title>
+  <meta name="description" content="Atelier: Cursed Entertainment's Creative &amp; Studio Suite, and its launcher: install, update and start LayerTack, Bathos, Mimic and CRUSH from one window. Installed together, they find each other as plugins.">
+  <link rel="icon" href="site/favicon.ico">
+  <link rel="stylesheet" href="site/style.css">
+</head>
+
+<body>
+  <header class="top">
+    <img class="logo" src="site/logo.png" alt="Atelier">
+    <div>
+      <h1>Atelier</h1>
+      <p class="tag">Creative &amp; Studio Suite. One launcher installs the apps, keeps them up to date and starts
+        them; installed together, they find each other as plugins.</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="shot">
+      <img src="images/launcher.png" alt="The Atelier launcher: LayerTack, Bathos, Mimic and CRUSH, with their versions and buttons">
+    </section>
+
+    <section class="actions">
+      <a class="btn" href="https://github.com/CursedPrograms/Atelier/releases/latest">Download the launcher</a>
+      <a class="btn quiet" href="https://github.com/CursedPrograms/Atelier">Get it on GitHub</a>
+    </section>
+
+    <section class="grid" id="apps"></section>
+
+    <section class="keys">
+      <h2>How it works</h2>
+      <p>Unzip <kbd>Atelier-Launcher-win64.zip</kbd> and run <kbd>install.bat</kbd>. The launcher asks GitHub for each
+        app's latest release, installs it in <kbd>%LOCALAPPDATA%\Programs\&lt;App&gt;</kbd> with Start menu and Desktop
+        shortcuts, and updates it when a new one is out. LayerTack finds Bathos and Mimic there for
+        <kbd>Filter &gt; Bathos</kbd> and <kbd>Filter &gt; Mimic</kbd>. Twelve languages, from English to Deitsch.</p>
+    </section>
+
+    <section class="shot splash">
+      <img src="images/splash.png" alt="The launcher's splash: an easel with a pink canvas">
+    </section>
+
+    <section class="suite">
+      <h2>The whole suite</h2>
+      <ul>
+        <li><a href="https://github.com/CursedPrograms/AetherCanvas-AI">AetherCanvas AI</a></li>
+        <li><a href="https://github.com/CursedPrograms/Changeling-Studio">Changeling Studio</a></li>
+        <li><a href="https://github.com/CursedPrograms/Firmament">Firmament</a></li>
+        <li><a href="https://github.com/CursedPrograms/LayerTack">LayerTack</a></li>
+        <li><a href="https://github.com/CursedPrograms/Bathos">Bathos</a></li>
+        <li><a href="https://github.com/CursedPrograms/Mimic">Mimic</a></li>
+        <li><a href="https://github.com/CursedPrograms/CRUSH">CRUSH</a></li>
+        <li><a href="https://github.com/CursedPrograms/Mosaic-Mask">Mosaic Mask</a></li>
+        <li><a href="https://github.com/CursedPrograms/Spatiality">Spatiality</a></li>
+        <li><a href="https://github.com/CursedPrograms/Acacia-GameEngine">Acacia Game Engine</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>Built with SDL2, Dear ImGui and stb.</p>
+    <p>&copy; <a href="https://cursed-entertainment.itch.io/">Cursed Entertainment</a> <span id="year">2026</span></p>
+  </footer>
+  <script src="site/site.js"></script>
+</body>
+
+</html>
