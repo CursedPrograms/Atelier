@@ -58,6 +58,14 @@
       "exe": "Terminus.exe",
       "description": "Photos to a textured 3D model: AliceVision's photogrammetry in three steps, GLB, OBJ and STL out.",
       "logo": "https://raw.githubusercontent.com/CursedPrograms/Terminus/main/assets/logo.png"
+    },
+    {
+      "name": "Firmament",
+      "repo": "CursedPrograms/Firmament",
+      "asset": "Firmament-win64.zip",
+      "exe": "Firmament.exe",
+      "description": "360° skyboxes from a prompt: look round them, repair the seam, upscale, export cube maps. Needs an NVIDIA card.",
+      "logo": "https://raw.githubusercontent.com/CursedPrograms/Firmament/main/cpp/assets/logo.png"
     }
   ]
 }

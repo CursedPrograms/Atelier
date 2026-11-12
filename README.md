@@ -21,7 +21,7 @@ other as plugins: LayerTack's **Filter > Bathos** and **Filter > Mimic** use the
 
 ![The Atelier launcher](images/launcher.png)
 
-- **The apps:** LayerTack, Bathos, Mimic, CRUSH, Hymnal and Terminus, each with its logo, its line, the version installed and the latest
+- **The apps:** LayerTack, Bathos, Mimic, CRUSH, Hymnal, Terminus and Firmament, each with its logo, its line, the version installed and the latest
   release on GitHub, and **Install**, **Update**, **Launch**, **Uninstall** and **Folder** buttons. **Install all**
   installs or updates everything that's out of date. Downloads show their progress.
 - **Where they go:** `%LOCALAPPDATA%\Programs\<App>`, the same folder each app's own installer uses (and where LayerTack
