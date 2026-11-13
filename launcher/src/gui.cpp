@@ -306,7 +306,8 @@ static void card(const Suite::App& a, float width) {
     const float h = 124, pad = 14, logoS = 92;
     ImDrawList* dl = ImGui::GetWindowDrawList();
     const ImVec2 p0 = ImGui::GetCursorScreenPos(), p1(p0.x + width, p0.y + h);
-    const bool notYet = a.release == Suite::R_NOT_YET || (a.soon && a.release != Suite::R_READY && !a.installed);
+    // not out yet (dashed, faded): only when it isn't on this PC either
+    const bool notYet = !a.installed && (a.release == Suite::R_NOT_YET || (a.soon && a.release != Suite::R_READY));
     dl->AddRectFilled(p0, p1, notYet ? C_BG : C_PANEL);
     if (notYet) dashedRect(dl, p0, p1, C_LINE); else dl->AddRect(p0, p1, C_LINE);
 
