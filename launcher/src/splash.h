@@ -1,5 +1,5 @@
 // Atelier launcher - the splash: shown in its own small window while the launcher starts, and again in Help > About.
-// (After LayerTack's.)
+// (After Chimera's.)
 #pragma once
 
 struct ImDrawList;

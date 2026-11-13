@@ -4,7 +4,7 @@
 - https://github.com/CursedPrograms/AetherCanvas-AI
 - https://github.com/CursedPrograms/Changeling-Studio
 - https://github.com/CursedPrograms/Firmament
-- https://github.com/CursedPrograms/LayerTack
+- https://github.com/CursedPrograms/Chimera
 - https://github.com/CursedPrograms/Bathos
 - https://github.com/CursedPrograms/Mimic
 - https://github.com/CursedPrograms/CRUSH
@@ -17,14 +17,14 @@
 ## The Atelier launcher
 
 One window to install the suite's apps, keep them up to date and start them. Installed together, they find each
-other as plugins: LayerTack's **Filter > Bathos** and **Filter > Mimic** use the Bathos and Mimic installed beside it.
+other as plugins: Chimera's **Filter > Bathos** and **Filter > Mimic** use the Bathos and Mimic installed beside it.
 
 ![The Atelier launcher](images/launcher.png)
 
-- **The apps:** LayerTack, Bathos, Mimic, CRUSH, Hymnal, Terminus and Firmament, each with its logo, its line, the version installed and the latest
+- **The apps:** Chimera, Bathos, Mimic, CRUSH, Hymnal, Terminus and Firmament, each with its logo, its line, the version installed and the latest
   release on GitHub, and **Install**, **Update**, **Launch**, **Uninstall** and **Folder** buttons. **Install all**
   installs or updates everything that's out of date. Downloads show their progress.
-- **Where they go:** `%LOCALAPPDATA%\Programs\<App>`, the same folder each app's own installer uses (and where LayerTack
+- **Where they go:** `%LOCALAPPDATA%\Programs\<App>`, the same folder each app's own installer uses (and where Chimera
   looks for `bathos-cli.exe` and `mimic-cli.exe`), with Start menu and Desktop shortcuts. Apps already installed
   are found and shown with their version. An app that's open isn't updated or uninstalled until it's closed.
 - **CRUSH** is installed with its own installer (per user: crush on the PATH, Explorer's right-click entries);

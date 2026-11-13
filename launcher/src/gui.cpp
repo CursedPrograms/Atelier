@@ -1,9 +1,9 @@
 // Atelier launcher - installs, updates, launches and uninstalls the apps of Atelier, Cursed Entertainment's creative
-// suite, from their GitHub releases. Installed together, the apps find each other as plugins (LayerTack's
-// Filter > Bathos and Filter > Mimic). SDL2 + OpenGL 3 + Dear ImGui, like LayerTack and Bathos.
+// suite, from their GitHub releases. Installed together, the apps find each other as plugins (Chimera's
+// Filter > Bathos and Filter > Mimic). SDL2 + OpenGL 3 + Dear ImGui, like Chimera and Bathos.
 //
 //   Atelier
-//   Atelier --capture out.bmp [--lang de] [--install LayerTack] [--uninstall LayerTack] [--splash]
+//   Atelier --capture out.bmp [--lang de] [--install Chimera] [--uninstall Chimera] [--splash]
 //       a screenshot from a hidden window once the checks (and the install) are done, then quit;
 //       --splash: the splash instead of the window
 #include "lang.h"
@@ -269,6 +269,39 @@ static const char* jobText(int job) {
 }
 
 // one app: its logo, name and line, the versions, and its buttons
+// ---------- the filters: a kind of app, and installed or not ----------
+static std::string kind;          // "" every kind
+static int which = 0;             // 0 all, 1 installed, 2 not installed
+static bool passes(const Suite::App& a) {
+    if (!kind.empty() && std::find(a.categories.begin(), a.categories.end(), kind) == a.categories.end()) return false;
+    if (which == 1 && !a.installed) return false;
+    if (which == 2 && a.installed) return false;
+    return true;
+}
+static bool chip(const char* label, bool on) {
+    if (on) { ImGui::PushStyleColor(ImGuiCol_Button, col4(C_PINK)); ImGui::PushStyleColor(ImGuiCol_ButtonHovered, col4(C_PINK)); }
+    const bool r = ImGui::Button(label);
+    if (on) ImGui::PopStyleColor(2);
+    return r;
+}
+static void filters() {
+    static const char* KINDS[] = {"Images", "3D", "Games", "Video", "Audio", "AI", "Tools"};
+    std::vector<Suite::App> all = Suite::apps();
+    if (chip(T("All"), kind.empty())) kind.clear();
+    for (const char* k : KINDS) {
+        bool any = false;
+        for (const auto& a : all) if (std::find(a.categories.begin(), a.categories.end(), k) != a.categories.end()) any = true;
+        if (!any) continue;
+        ImGui::SameLine(0, 4);
+        if (chip(T(k), kind == k)) kind = kind == k ? "" : k;
+    }
+    ImGui::SameLine(0, 22);
+    ImGui::TextDisabled("|"); ImGui::SameLine(0, 22);
+    if (chip(T("Every app"), which == 0)) which = 0; ImGui::SameLine(0, 4);
+    if (chip(T("Installed"), which == 1)) which = 1; ImGui::SameLine(0, 4);
+    if (chip(T("Not installed"), which == 2)) which = 2;
+}
+
 static void card(const Suite::App& a, float width) {
     const float h = 124, pad = 14, logoS = 92;
     ImDrawList* dl = ImGui::GetWindowDrawList();
@@ -493,10 +526,17 @@ static void frame() {
     ImGui::TextDisabled("%s", T("Install the apps, keep them up to date, start them from here. Installed together, they find each other as plugins."));
     ImGui::PopTextWrapPos();
     ImGui::Spacing();
+    filters();
+    ImGui::Spacing();
     ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, ImVec2(0, 0));
     ImGui::BeginChild("##cards", ImVec2(0, 0), ImGuiChildFlags_None, ImGuiWindowFlags_NoBackground);
     const float cw = ImGui::GetContentRegionAvail().x - (ImGui::GetScrollMaxY() > 0 ? 4 : 0);
-    for (const auto& a : Suite::apps()) { ImGui::PushID(a.name.c_str()); card(a, cw); ImGui::PopID(); }
+    int shown = 0;
+    for (const auto& a : Suite::apps()) {
+        if (!passes(a)) continue;
+        ImGui::PushID(a.name.c_str()); card(a, cw); ImGui::PopID(); ++shown;
+    }
+    if (!shown) ImGui::TextDisabled("%s", T("No apps here: pick another filter."));
     ImGui::EndChild();
     ImGui::PopStyleVar();
     ImGui::End();
@@ -532,7 +572,7 @@ static void frame() {
     about();
 }
 
-// ---------- the splash window: shown while the launcher starts (LayerTack's) ----------
+// ---------- the splash window: shown while the launcher starts (Chimera's) ----------
 static SDL_Window* splashWin = nullptr;
 static bool splashSkip = false, quitEarly = false;   // skip: clicked or Escape; quitEarly: closed (Alt+F4)
 
@@ -682,7 +722,7 @@ int main(int, char**) {
         ImGui_ImplOpenGL3_NewFrame();
         ImGui_ImplSDL2_NewFrame();
         ImGui::NewFrame();
-        if (splashShot) Splash::draw(ImGui::GetBackgroundDrawList(), 0, 0, T("Asking GitHub about LayerTack..."), 0.45f);
+        if (splashShot) Splash::draw(ImGui::GetBackgroundDrawList(), 0, 0, T("Asking GitHub about Chimera..."), 0.45f);
         else frame();
         int w, h;
         SDL_GL_GetDrawableSize(window, &w, &h);

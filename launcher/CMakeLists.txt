@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.20)
 project(Atelier VERSION 1.0.0 LANGUAGES C CXX)
 # Atelier: the launcher of Cursed Entertainment's creative suite. Installs, updates, launches and uninstalls the
-# suite's apps from their GitHub releases. SDL2 + OpenGL 3 + Dear ImGui + stb, like LayerTack and Bathos.
+# suite's apps from their GitHub releases. SDL2 + OpenGL 3 + Dear ImGui + stb, like Chimera and Bathos.
 # Windows only (WinHTTP, the shell, Windows' own tar.exe). Build: build.bat
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)

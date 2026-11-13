@@ -52,12 +52,12 @@ static std::vector<App> builtIn() {
         a.description = desc; a.logo = logo; a.plugin = plugin; a.soon = soon;
         v.push_back(a);
     };
-    add("LayerTack", "LayerTack-win64.zip", "A layer-based image editor: layers, masks, blend modes and filters.",
-        "https://raw.githubusercontent.com/CursedPrograms/LayerTack/main/cpp/assets/logo.png", "", false);
+    add("Chimera", "Chimera-win64.zip", "A layer-based image editor: layers, masks, blend modes and filters.",
+        "https://raw.githubusercontent.com/CursedPrograms/Chimera/main/cpp/assets/logo.png", "", false);
     add("Bathos", "Bathos-win64.zip", "A picture in, its depth map out. Near is bright, far is dark.",
-        "https://raw.githubusercontent.com/CursedPrograms/Bathos/main/assets/logo.png", "In LayerTack: Filter > Bathos", false);
+        "https://raw.githubusercontent.com/CursedPrograms/Bathos/main/assets/logo.png", "In Chimera: Filter > Bathos", false);
     add("Mimic", "Mimic-win64.zip", "One person's face onto a picture or a video.",
-        "https://raw.githubusercontent.com/CursedPrograms/Mimic/main/assets/logo.png", "In LayerTack: Filter > Mimic", false);
+        "https://raw.githubusercontent.com/CursedPrograms/Mimic/main/assets/logo.png", "In Chimera: Filter > Mimic", false);
     // a command-line tool: its own installer (per user) puts it on the PATH and adds Explorer's right-click entries
     add("CRUSH", "CRUSH-*-win64-portable.zip", "A file compressor, written from scratch, for the command line and Explorer.",
         "https://raw.githubusercontent.com/CursedPrograms/CRUSH/main/assets/logo.png", "In Explorer: right-click > Add to CRUSH archive", false);
@@ -80,6 +80,15 @@ static std::vector<App> builtIn() {
     pg.appId = "{30C41005-C5F8-461A-878D-A91C1BFA4ACE}";
     add("Firmament", "Firmament-win64.zip", "360° skyboxes from a prompt: look round them, repair the seam, upscale, export cube maps. Needs an NVIDIA card.",
         "https://raw.githubusercontent.com/CursedPrograms/Firmament/main/cpp/assets/logo.png", "", false);
+    add("Demiurge", "Demiurge-win64.zip", "Make worlds: a 2D and 3D game engine with C#, built on Godot Engine 4.7.",
+        "https://raw.githubusercontent.com/CursedPrograms/Demiurge/main/misc/demiurge/logo.png", "", false);
+    // big to small, and the kinds of app (the launcher's filters)
+    static const char* ORDER[] = {"Chimera", "Demiurge", "Pygmalion", "Terminus", "Mimic", "Firmament", "Hymnal", "Bathos", "CRUSH"};
+    static const std::vector<std::pair<const char*, std::vector<std::string>>> CATS = {{"Chimera", {"Images"}}, {"Demiurge", {"Games", "3D"}}, {"Pygmalion", {"3D"}}, {"Terminus", {"3D"}}, {"Mimic", {"Images", "Video", "AI"}}, {"Firmament", {"Images", "3D", "AI"}}, {"Hymnal", {"Audio", "AI"}}, {"Bathos", {"Images", "AI"}}, {"CRUSH", {"Tools"}}};
+    for (auto& a : v) {
+        for (int i = 0; i < (int)(sizeof ORDER / sizeof ORDER[0]); ++i) if (a.name == ORDER[i]) a.order = i;
+        for (const auto& c : CATS) if (a.name == c.first) a.categories = c.second;
+    }
     return v;
 }
 
@@ -216,7 +225,7 @@ bool App::updatable() const {
     return compareVersions(version, latest) < 0;
 }
 
-// an exe the launcher didn't install: its version read from the exe itself ("Version 1.2.0" on LayerTack's
+// an exe the launcher didn't install: its version read from the exe itself ("Version 1.2.0" on Chimera's
 // splash, "Bathos 1.0.0" in Bathos's window), so apps installed by their own installers show up properly
 static std::string sniffVersion(const fs::path& exe, const std::string& name) {
     std::string data;
@@ -307,6 +316,8 @@ static void mergeCatalog(const std::string& text) {
         set("logo", a->logo); set("plugin", a->plugin);
         set("setup", a->setup); set("setupArgs", a->setupArgs); set("appId", a->appId); set("launch", a->launch);
         if (e["soon"].type == Json::Value::Bool) a->soon = e["soon"].b;
+        if (e["order"].type == Json::Value::Number) a->order = (int)e["order"].n;
+        if (e["categories"].isArray()) { a->categories.clear(); for (const auto& c : e["categories"].items) if (!c.str().empty()) a->categories.push_back(c.str()); }
     }
 }
 
@@ -611,7 +622,7 @@ static bool runTar(const fs::path& zip, const fs::path& into, std::string& err) 
     return true;
 }
 
-// where the exe is in an unpacked zip: at its root (LayerTack) or in a top folder (Bathos/)
+// where the exe is in an unpacked zip: at its root (Chimera) or in a top folder (Bathos/)
 static fs::path findRoot(const fs::path& dir, const std::string& exe) {
     if (isFile(dir / fs::u8path(exe))) return dir;
     std::error_code ec;
@@ -825,7 +836,12 @@ void recheck() {
 bool checking() { return checkBusy; }
 std::string checkStatus() { std::lock_guard<std::mutex> g(mtx); return checkSay; }
 float checkProgress() { return checkProg; }
-std::vector<App> apps() { std::lock_guard<std::mutex> g(mtx); return list; }
+std::vector<App> apps() {   // a copy, big apps first
+    std::vector<App> v;
+    { std::lock_guard<std::mutex> g(mtx); v = list; }
+    std::stable_sort(v.begin(), v.end(), [](const App& x, const App& y) { return x.order < y.order; });
+    return v;
+}
 bool busy() { std::lock_guard<std::mutex> g(mtx); return working || !queue.empty(); }
 std::string launcherLatest() { std::lock_guard<std::mutex> g(mtx); return selfLatest; }
 

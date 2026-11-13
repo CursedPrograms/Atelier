@@ -3,7 +3,7 @@
 //
 // The catalog is a built-in list plus atelier.json from the Atelier repo (fetched each start, cached), so new apps
 // can be added without a new launcher. Apps go in %LOCALAPPDATA%\Programs\<App>, where their own installers put
-// them and where LayerTack looks for bathos-cli / mimic-cli; what the launcher installed is remembered in
+// them and where Chimera looks for bathos-cli / mimic-cli; what the launcher installed is remembered in
 // %LOCALAPPDATA%\Programs\Atelier\installed.json.
 #pragma once
 #include <cstdint>
@@ -22,6 +22,8 @@ struct App {
     std::string setup, setupArgs, appId;   // an installer (Inno Setup) to prefer over the zip, its silent switches, its AppId
     std::string launch = "window";         // "window", "console" (a command-line tool: a console in its folder), "none"
     bool soon = false;                 // the catalog says it isn't out yet
+    std::vector<std::string> categories;   // "Images", "3D", "Games", "Audio", "Video", "AI", "Tools": the launcher's filters
+    int order = 1000;                  // where it stands in the list: the big apps first
     // from GitHub
     int release = R_CHECKING;
     std::string latest, url, setupUrl, releaseError;
@@ -42,7 +44,7 @@ struct App {
 void start(const std::string& exeFolder);   // reads what's installed and the cached catalog; checks GitHub in the background
 void recheck();                             // asks GitHub again
 bool checking();                            // the background check is still going
-std::string checkStatus();                  // what it's doing ("Asking GitHub about LayerTack...")
+std::string checkStatus();                  // what it's doing ("Asking GitHub about Chimera...")
 float checkProgress();
 std::vector<App> apps();                    // a copy, for drawing
 void poll();                                // which apps are running (call now and then)

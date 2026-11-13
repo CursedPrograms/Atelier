@@ -1,22 +1,56 @@
 {
-  "about": "The Atelier launcher's catalog: it reads this on every start, so apps can be added here without a new launcher. asset and setup may use * for the version. launch: window, console or none.",
+  "about": "The Atelier launcher's catalog: it reads this on every start, so apps can be added here without a new launcher. asset and setup may use * for the version. launch: window, console or none. The list is in this order (the big apps first); categories are the launcher's filters.",
   "apps": [
     {
-      "name": "LayerTack",
-      "repo": "CursedPrograms/LayerTack",
-      "asset": "LayerTack-win64.zip",
-      "exe": "LayerTack.exe",
+      "name": "Chimera",
+      "repo": "CursedPrograms/Chimera",
+      "asset": "Chimera-win64.zip",
+      "exe": "Chimera.exe",
       "description": "A layer-based image editor: layers, masks, blend modes and filters.",
-      "logo": "https://raw.githubusercontent.com/CursedPrograms/LayerTack/main/cpp/assets/logo.png"
+      "logo": "https://raw.githubusercontent.com/CursedPrograms/Chimera/main/cpp/assets/logo.png",
+      "categories": [
+        "Images"
+      ]
     },
     {
-      "name": "Bathos",
-      "repo": "CursedPrograms/Bathos",
-      "asset": "Bathos-win64.zip",
-      "exe": "Bathos.exe",
-      "description": "A picture in, its depth map out. Near is bright, far is dark.",
-      "logo": "https://raw.githubusercontent.com/CursedPrograms/Bathos/main/assets/logo.png",
-      "plugin": "In LayerTack: Filter > Bathos"
+      "name": "Demiurge",
+      "repo": "CursedPrograms/Demiurge",
+      "asset": "Demiurge-win64.zip",
+      "exe": "Demiurge.exe",
+      "description": "Make worlds: a 2D and 3D game engine with C#, built on Godot Engine 4.7.",
+      "logo": "https://raw.githubusercontent.com/CursedPrograms/Demiurge/main/misc/demiurge/logo.png",
+      "categories": [
+        "Games",
+        "3D"
+      ]
+    },
+    {
+      "name": "Pygmalion",
+      "repo": "CursedPrograms/Pygmalion",
+      "asset": "Pygmalion-win64.zip",
+      "setup": "Pygmalion-setup.exe",
+      "setupArgs": "/VERYSILENT /SUPPRESSMSGBOXES /NORESTART",
+      "appId": "{30C41005-C5F8-461A-878D-A91C1BFA4ACE}",
+      "exe": "Pygmalion.exe",
+      "description": "People in 3D with sliders: MakeHuman remade. Shape, dress, pose, render, and export with the skeleton.",
+      "logo": "https://raw.githubusercontent.com/CursedPrograms/Pygmalion/main/assets/logo.png",
+      "categories": [
+        "3D"
+      ]
+    },
+    {
+      "name": "Terminus",
+      "repo": "CursedPrograms/Terminus",
+      "asset": "Terminus-win64.zip",
+      "setup": "Terminus-setup.exe",
+      "setupArgs": "/VERYSILENT /SUPPRESSMSGBOXES /NORESTART",
+      "appId": "{9B6E2D4C-7A1F-4E3B-8C5D-2F0A6B1E9D73}",
+      "exe": "Terminus.exe",
+      "description": "Photos to a textured 3D model: AliceVision's photogrammetry in three steps, GLB, OBJ and STL out.",
+      "logo": "https://raw.githubusercontent.com/CursedPrograms/Terminus/main/assets/logo.png",
+      "categories": [
+        "3D"
+      ]
     },
     {
       "name": "Mimic",
@@ -25,7 +59,50 @@
       "exe": "Mimic.exe",
       "description": "One person's face onto a picture or a video.",
       "logo": "https://raw.githubusercontent.com/CursedPrograms/Mimic/main/assets/logo.png",
-      "plugin": "In LayerTack: Filter > Mimic"
+      "plugin": "In Chimera: Filter > Mimic",
+      "categories": [
+        "Images",
+        "Video",
+        "AI"
+      ]
+    },
+    {
+      "name": "Firmament",
+      "repo": "CursedPrograms/Firmament",
+      "asset": "Firmament-win64.zip",
+      "exe": "Firmament.exe",
+      "description": "360° skyboxes from a prompt: look round them, repair the seam, upscale, export cube maps. Needs an NVIDIA card.",
+      "logo": "https://raw.githubusercontent.com/CursedPrograms/Firmament/main/cpp/assets/logo.png",
+      "categories": [
+        "Images",
+        "3D",
+        "AI"
+      ]
+    },
+    {
+      "name": "Hymnal",
+      "repo": "CursedPrograms/Hymnal",
+      "asset": "Hymnal-win64.zip",
+      "exe": "Hymnal.exe",
+      "description": "Whole songs, with vocals, from a style: lyrics written for you, covers, remixes, stems, tempo and key.",
+      "logo": "https://raw.githubusercontent.com/CursedPrograms/Hymnal/main/assets/logo.png",
+      "categories": [
+        "Audio",
+        "AI"
+      ]
+    },
+    {
+      "name": "Bathos",
+      "repo": "CursedPrograms/Bathos",
+      "asset": "Bathos-win64.zip",
+      "exe": "Bathos.exe",
+      "description": "A picture in, its depth map out. Near is bright, far is dark.",
+      "logo": "https://raw.githubusercontent.com/CursedPrograms/Bathos/main/assets/logo.png",
+      "plugin": "In Chimera: Filter > Bathos",
+      "categories": [
+        "Images",
+        "AI"
+      ]
     },
     {
       "name": "CRUSH",
@@ -38,53 +115,10 @@
       "launch": "console",
       "description": "A file compressor, written from scratch, for the command line and Explorer.",
       "logo": "https://raw.githubusercontent.com/CursedPrograms/CRUSH/main/assets/logo.png",
-      "plugin": "In Explorer: right-click > Add to CRUSH archive"
-    },
-    {
-      "name": "Hymnal",
-      "repo": "CursedPrograms/Hymnal",
-      "asset": "Hymnal-win64.zip",
-      "exe": "Hymnal.exe",
-      "description": "Whole songs, with vocals, from a style: lyrics written for you, covers, remixes, stems, tempo and key.",
-      "logo": "https://raw.githubusercontent.com/CursedPrograms/Hymnal/main/assets/logo.png"
-    },
-    {
-      "name": "Terminus",
-      "repo": "CursedPrograms/Terminus",
-      "asset": "Terminus-win64.zip",
-      "setup": "Terminus-setup.exe",
-      "setupArgs": "/VERYSILENT /SUPPRESSMSGBOXES /NORESTART",
-      "appId": "{9B6E2D4C-7A1F-4E3B-8C5D-2F0A6B1E9D73}",
-      "exe": "Terminus.exe",
-      "description": "Photos to a textured 3D model: AliceVision's photogrammetry in three steps, GLB, OBJ and STL out.",
-      "logo": "https://raw.githubusercontent.com/CursedPrograms/Terminus/main/assets/logo.png"
-    },
-    {
-      "name": "Pygmalion",
-      "repo": "CursedPrograms/Pygmalion",
-      "asset": "Pygmalion-win64.zip",
-      "setup": "Pygmalion-setup.exe",
-      "setupArgs": "/VERYSILENT /SUPPRESSMSGBOXES /NORESTART",
-      "appId": "{30C41005-C5F8-461A-878D-A91C1BFA4ACE}",
-      "exe": "Pygmalion.exe",
-      "description": "People in 3D with sliders: MakeHuman remade. Shape, dress, pose, render, and export with the skeleton.",
-      "logo": "https://raw.githubusercontent.com/CursedPrograms/Pygmalion/main/assets/logo.png"
-    },
-    {
-      "name": "Firmament",
-      "repo": "CursedPrograms/Firmament",
-      "asset": "Firmament-win64.zip",
-      "exe": "Firmament.exe",
-      "description": "360° skyboxes from a prompt: look round them, repair the seam, upscale, export cube maps. Needs an NVIDIA card.",
-      "logo": "https://raw.githubusercontent.com/CursedPrograms/Firmament/main/cpp/assets/logo.png"
-    },
-    {
-      "name": "Demiurge",
-      "repo": "CursedPrograms/Demiurge",
-      "asset": "Demiurge-win64.zip",
-      "exe": "Demiurge.exe",
-      "description": "Make worlds: a 2D and 3D game engine with C#, built on Godot Engine 4.7.",
-      "logo": "https://raw.githubusercontent.com/CursedPrograms/Demiurge/main/misc/demiurge/logo.png"
+      "plugin": "In Explorer: right-click > Add to CRUSH archive",
+      "categories": [
+        "Tools"
+      ]
     }
   ]
 }
