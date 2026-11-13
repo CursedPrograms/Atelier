@@ -89,3 +89,4 @@ AI = ВИ
 Tools = Алати
 Every app = Све апликације
 No apps here: pick another filter. = Овде нема апликација: изаберите други филтер.
+AR = AR

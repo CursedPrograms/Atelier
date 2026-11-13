@@ -89,3 +89,4 @@ AI = AI
 Tools = 도구
 Every app = 모든 앱
 No apps here: pick another filter. = 여기에는 앱이 없습니다. 다른 필터를 고르세요.
+AR = AR

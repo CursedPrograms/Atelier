@@ -89,3 +89,4 @@ AI = AI
 Tools = Nu'ukulo'ob
 Every app = Tuláakal app
 No apps here: pick another filter. = Mina'an app weye': ch'a' u láak' filtro.
+AR = AR

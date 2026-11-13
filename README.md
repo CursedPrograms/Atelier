@@ -5,6 +5,7 @@
 - https://github.com/CursedPrograms/Changeling-Studio
 - https://github.com/CursedPrograms/Firmament
 - https://github.com/CursedPrograms/Chimera
+- https://github.com/CursedPrograms/Diorama
 - https://github.com/CursedPrograms/Bathos
 - https://github.com/CursedPrograms/Mimic
 - https://github.com/CursedPrograms/CRUSH

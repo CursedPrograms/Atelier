@@ -89,3 +89,4 @@ AI = AI
 Tools = 工具
 Every app = 所有应用
 No apps here: pick another filter. = 这里没有应用：请换一个筛选。
+AR = AR

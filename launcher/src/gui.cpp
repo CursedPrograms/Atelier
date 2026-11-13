@@ -285,7 +285,7 @@ static bool chip(const char* label, bool on) {
     return r;
 }
 static void filters() {
-    static const char* KINDS[] = {"Images", "3D", "Games", "Video", "Audio", "AI", "Tools"};
+    static const char* KINDS[] = {"Images", "3D", "AR", "Games", "Video", "Audio", "AI", "Tools"};
     std::vector<Suite::App> all = Suite::apps();
     if (chip(T("All"), kind.empty())) kind.clear();
     for (const char* k : KINDS) {

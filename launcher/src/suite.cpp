@@ -80,11 +80,13 @@ static std::vector<App> builtIn() {
     pg.appId = "{30C41005-C5F8-461A-878D-A91C1BFA4ACE}";
     add("Firmament", "Firmament-win64.zip", "360° skyboxes from a prompt: look round them, repair the seam, upscale, export cube maps. Needs an NVIDIA card.",
         "https://raw.githubusercontent.com/CursedPrograms/Firmament/main/cpp/assets/logo.png", "", false);
+    add("Diorama", "Diorama-win64.zip", "Little worlds on AR markers, made like Unity: markers without a webcam, glTF models, built into games for a phone's browser.",
+        "https://raw.githubusercontent.com/CursedPrograms/Diorama/main/assets/logo.png", "", false);
     add("Demiurge", "Demiurge-win64.zip", "Make worlds: a 2D and 3D game engine with C#, built on Godot Engine 4.7.",
         "https://raw.githubusercontent.com/CursedPrograms/Demiurge/main/misc/demiurge/logo.png", "", false);
     // big to small, and the kinds of app (the launcher's filters)
-    static const char* ORDER[] = {"Chimera", "Demiurge", "Pygmalion", "Terminus", "Mimic", "Firmament", "Hymnal", "Bathos", "CRUSH"};
-    static const std::vector<std::pair<const char*, std::vector<std::string>>> CATS = {{"Chimera", {"Images"}}, {"Demiurge", {"Games", "3D"}}, {"Pygmalion", {"3D"}}, {"Terminus", {"3D"}}, {"Mimic", {"Images", "Video", "AI"}}, {"Firmament", {"Images", "3D", "AI"}}, {"Hymnal", {"Audio", "AI"}}, {"Bathos", {"Images", "AI"}}, {"CRUSH", {"Tools"}}};
+    static const char* ORDER[] = {"Chimera", "Demiurge", "Diorama", "Pygmalion", "Terminus", "Mimic", "Firmament", "Hymnal", "Bathos", "CRUSH"};
+    static const std::vector<std::pair<const char*, std::vector<std::string>>> CATS = {{"Chimera", {"Images"}}, {"Demiurge", {"Games", "3D"}}, {"Diorama", {"AR", "Games", "3D"}}, {"Pygmalion", {"3D"}}, {"Terminus", {"3D"}}, {"Mimic", {"Images", "Video", "AI"}}, {"Firmament", {"Images", "3D", "AI"}}, {"Hymnal", {"Audio", "AI"}}, {"Bathos", {"Images", "AI"}}, {"CRUSH", {"Tools"}}};
     for (auto& a : v) {
         for (int i = 0; i < (int)(sizeof ORDER / sizeof ORDER[0]); ++i) if (a.name == ORDER[i]) a.order = i;
         for (const auto& c : CATS) if (a.name == c.first) a.categories = c.second;

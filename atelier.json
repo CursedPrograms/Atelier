@@ -25,6 +25,19 @@
       ]
     },
     {
+      "name": "Diorama",
+      "repo": "CursedPrograms/Diorama",
+      "asset": "Diorama-win64.zip",
+      "exe": "Diorama.exe",
+      "description": "Little worlds on AR markers, made like Unity: markers without a webcam, glTF models, built into games for a phone's browser.",
+      "logo": "https://raw.githubusercontent.com/CursedPrograms/Diorama/main/assets/logo.png",
+      "categories": [
+        "AR",
+        "Games",
+        "3D"
+      ]
+    },
+    {
       "name": "Pygmalion",
       "repo": "CursedPrograms/Pygmalion",
       "asset": "Pygmalion-win64.zip",

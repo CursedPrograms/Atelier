@@ -89,3 +89,4 @@ AI = KI
 Tools = Werkzeuge
 Every app = Alle Apps
 No apps here: pick another filter. = Hier sind keine Apps: wähle einen anderen Filter.
+AR = AR

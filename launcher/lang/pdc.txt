@@ -89,3 +89,4 @@ AI = KI
 Tools = Waerkzeich
 Every app = Alle Apps
 No apps here: pick another filter. = Keh Apps do: nemm en annerer Filter.
+AR = AR

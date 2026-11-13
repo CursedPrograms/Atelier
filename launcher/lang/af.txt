@@ -89,3 +89,4 @@ AI = KI
 Tools = Gereedskap
 Every app = Elke toep
 No apps here: pick another filter. = Geen toeps hier nie: kies 'n ander filter.
+AR = AR

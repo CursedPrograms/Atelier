@@ -89,3 +89,4 @@ AI = IA
 Tools = Herramientas
 Every app = Todas las apps
 No apps here: pick another filter. = No hay apps aquí: elige otro filtro.
+AR = AR
