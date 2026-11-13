@@ -417,6 +417,11 @@ static void check() {
         say(T("Fetching the logos..."), 0.75f + 0.2f * i / n);
         const fs::path cached = dataPath("cache/logos/" + a.name + ".png");
         std::error_code ec;
+        // installed: the app's own logo, the one on this PC (newer than its repo's until it's pushed)
+        if (!a.folder.empty()) {
+            const fs::path own = fs::u8path(a.folder) / "assets" / "logo.png";
+            if (isFile(own)) { fs::copy_file(own, cached, fs::copy_options::overwrite_existing, ec); loadLogo(isFile(cached) ? cached : own, a.name); continue; }
+        }
         bool fresh = false;
         if (isFile(cached)) {
             const auto age = fs::file_time_type::clock::now() - fs::last_write_time(cached, ec);

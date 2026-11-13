@@ -77,6 +77,14 @@
       "exe": "Firmament.exe",
       "description": "360° skyboxes from a prompt: look round them, repair the seam, upscale, export cube maps. Needs an NVIDIA card.",
       "logo": "https://raw.githubusercontent.com/CursedPrograms/Firmament/main/cpp/assets/logo.png"
+    },
+    {
+      "name": "Demiurge",
+      "repo": "CursedPrograms/Demiurge",
+      "asset": "Demiurge-win64.zip",
+      "exe": "Demiurge.exe",
+      "description": "Make worlds: a 2D and 3D game engine with C#, built on Godot Engine 4.7.",
+      "logo": "https://raw.githubusercontent.com/CursedPrograms/Demiurge/main/misc/demiurge/logo.png"
     }
   ]
 }
