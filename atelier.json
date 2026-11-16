@@ -66,6 +66,19 @@
       ]
     },
     {
+      "name": "Changeling Studio",
+      "repo": "CursedPrograms/Changeling-Studio",
+      "asset": "ChangelingStudio-win64.zip",
+      "exe": "ChangelingStudio.exe",
+      "description": "Every Changeling in one window: face swap on photos, videos and the webcam, makeup and hair colour, and more to come.",
+      "logo": "https://raw.githubusercontent.com/CursedPrograms/Changeling-Studio/main/cpp/assets/logo.png",
+      "categories": [
+        "Images",
+        "Video",
+        "AI"
+      ]
+    },
+    {
       "name": "Mimic",
       "repo": "CursedPrograms/Mimic",
       "asset": "Mimic-win64.zip",
