@@ -12,7 +12,6 @@
 - https://github.com/CursedPrograms/Hymnal
 - https://github.com/CursedPrograms/Terminus
 - https://github.com/CursedPrograms/Mosaic-Mask
-- https://github.com/CursedPrograms/Spatiality
 
 ## The Atelier launcher
 
