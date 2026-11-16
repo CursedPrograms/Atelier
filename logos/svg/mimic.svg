@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <!-- Mimic: two masks, one warm (you), one pale (who you become), turned towards each other, overlapping -->
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2e2e34"/><stop offset="1" stop-color="#1c1c22"/></linearGradient>
+    <linearGradient id="rim" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#ff4646"/><stop offset="0.5" stop-color="#c84cd0"/><stop offset="1" stop-color="#e050c0"/></linearGradient>
+    <linearGradient id="warm" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffb886"/><stop offset="0.5" stop-color="#ff7e5e"/><stop offset="1" stop-color="#d84a7c"/></linearGradient>
+    <linearGradient id="warmShade" x1="1" y1="0" x2="0" y2="0"><stop offset="0" stop-color="#b03a5a" stop-opacity="0.55"/><stop offset="0.45" stop-color="#b03a5a" stop-opacity="0"/></linearGradient>
+    <linearGradient id="pale" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fdfdff"/><stop offset="0.55" stop-color="#d8dae4"/><stop offset="1" stop-color="#9ca0b2"/></linearGradient>
+    <linearGradient id="paleShade" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#6a6e80" stop-opacity="0.6"/><stop offset="0.4" stop-color="#6a6e80" stop-opacity="0"/></linearGradient>
+  </defs>
+  <rect x="10" y="10" width="492" height="492" rx="96" fill="url(#bg)" stroke="url(#rim)" stroke-width="12"/>
+  <!-- the pale mask: behind, turned a little to the left -->
+  <g transform="rotate(8 330 260)">
+    <path d="M276 80 C350 66 420 92 432 156 C446 228 430 316 394 370 C366 412 330 436 296 432 C272 388 262 320 262 250 C262 180 256 118 276 80 Z" fill="url(#pale)"/>
+    <path d="M276 80 C350 66 420 92 432 156 C446 228 430 316 394 370 C366 412 330 436 296 432 C272 388 262 320 262 250 C262 180 256 118 276 80 Z" fill="url(#paleShade)"/>
+    <path d="M300 196 C320 182 352 184 370 198 C350 212 320 212 300 196 Z" fill="#26262e"/>
+    <path d="M296 176 C320 160 360 164 384 180" fill="none" stroke="#ffffff" stroke-width="5" stroke-linecap="round" opacity="0.7"/>
+    <path d="M332 214 C338 252 344 284 328 304 C320 306 312 302 308 298" fill="#c4c6d2" stroke="#9a9eb0" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M308 348 C326 358 352 356 368 342 C352 352 326 354 308 348 Z" fill="#6a6e80" stroke="#6a6e80" stroke-width="5" stroke-linejoin="round"/>
+  </g>
+  <!-- the warm mask: in front, turned a little to the right -->
+  <g transform="rotate(-10 190 260)">
+    <path d="M150 96 C206 74 270 88 290 130 C312 172 306 262 290 324 C274 380 236 422 200 428 C160 420 124 380 110 322 C96 268 98 196 110 152 C116 128 130 106 150 96 Z" fill="url(#warm)"/>
+    <path d="M150 96 C206 74 270 88 290 130 C312 172 306 262 290 324 C274 380 236 422 200 428 C160 420 124 380 110 322 C96 268 98 196 110 152 C116 128 130 106 150 96 Z" fill="url(#warmShade)"/>
+    <path d="M132 210 C150 196 180 198 196 212 C178 226 150 226 132 210 Z" fill="#3a141e"/>
+    <path d="M226 210 C240 198 266 200 280 212 C264 224 240 224 226 210 Z" fill="#3a141e"/>
+    <path d="M128 190 C150 174 188 176 206 190 M222 190 C240 178 270 180 286 192" fill="none" stroke="#ffd6b4" stroke-width="5" stroke-linecap="round" opacity="0.75"/>
+    <path d="M210 222 C214 260 222 290 206 312 C196 316 186 312 180 306" fill="#ff9a74" stroke="#d4566a" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M168 350 C192 364 224 362 246 348 C226 374 190 374 168 350 Z" fill="#7a2434"/>
+  </g>
+</svg>

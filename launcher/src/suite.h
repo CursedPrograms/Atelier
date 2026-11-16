@@ -21,6 +21,7 @@ struct App {
     std::string name, repo, asset, exe, description, logo, plugin;
     std::string setup, setupArgs, appId;   // an installer (Inno Setup) to prefer over the zip, its silent switches, its AppId
     std::string launch = "window";         // "window", "console" (a command-line tool: a console in its folder), "none"
+    std::string localDirs;                 // where it may already be on this PC (folders, ';' between): used before Programs\<name>
     bool soon = false;                 // the catalog says it isn't out yet
     std::vector<std::string> categories;   // "Images", "3D", "Games", "Audio", "Video", "AI", "Tools": the launcher's filters
     int order = 1000;                  // where it stands in the list: the big apps first

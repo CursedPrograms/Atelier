@@ -61,6 +61,11 @@ static std::vector<App> builtIn() {
         "https://raw.githubusercontent.com/CursedPrograms/Changeling-Studio/main/cpp/assets/logo.png", "", false);
     App& cs = v.back();
     cs.repo = "CursedPrograms/Changeling-Studio"; cs.exe = "ChangelingStudio.exe";
+    // pictures and video from words (ComfyUI underneath); a window round its Python backend, run from its own folder
+    add("AetherCanvas AI", "", "Pictures and video from words, on your own PC: ComfyUI and Python underneath, in one window.",
+        "https://raw.githubusercontent.com/CursedPrograms/AetherCanvas-AI/main/assets/logo.png", "", false);
+    App& ae = v.back();
+    ae.repo = "CursedPrograms/AetherCanvas-AI"; ae.exe = "AetherCanvas.exe"; ae.localDirs = "C:\\cc\\AetherCanvas-AI;D:\\cc\\AetherCanvas-AI";
     add("Mimic", "Mimic-win64.zip", "One person's face onto a picture or a video.",
         "https://raw.githubusercontent.com/CursedPrograms/Mimic/main/assets/logo.png", "In Chimera: Filter > Mimic", false);
     // a command-line tool: its own installer (per user) puts it on the PATH and adds Explorer's right-click entries
@@ -90,8 +95,8 @@ static std::vector<App> builtIn() {
     add("Demiurge", "Demiurge-win64.zip", "Make worlds: a 2D and 3D game engine with C#, built on Godot Engine 4.7.",
         "https://raw.githubusercontent.com/CursedPrograms/Demiurge/main/misc/demiurge/logo.png", "", false);
     // big to small, and the kinds of app (the launcher's filters)
-    static const char* ORDER[] = {"Chimera", "Demiurge", "Diorama", "Pygmalion", "Terminus", "Changeling Studio", "Mimic", "Firmament", "Hymnal", "Bathos", "CRUSH"};
-    static const std::vector<std::pair<const char*, std::vector<std::string>>> CATS = {{"Chimera", {"Images"}}, {"Demiurge", {"Games", "3D"}}, {"Diorama", {"AR", "Games", "3D"}}, {"Pygmalion", {"3D"}}, {"Terminus", {"3D"}}, {"Changeling Studio", {"Images", "Video", "AI"}}, {"Mimic", {"Images", "Video", "AI"}}, {"Firmament", {"Images", "3D", "AI"}}, {"Hymnal", {"Audio", "AI"}}, {"Bathos", {"Images", "AI"}}, {"CRUSH", {"Tools"}}};
+    static const char* ORDER[] = {"Chimera", "Demiurge", "Diorama", "Pygmalion", "Terminus", "AetherCanvas AI", "Changeling Studio", "Mimic", "Firmament", "Hymnal", "Bathos", "CRUSH"};
+    static const std::vector<std::pair<const char*, std::vector<std::string>>> CATS = {{"Chimera", {"Images"}}, {"Demiurge", {"Games", "3D"}}, {"Diorama", {"AR", "Games", "3D"}}, {"Pygmalion", {"3D"}}, {"Terminus", {"3D"}}, {"AetherCanvas AI", {"Images", "Video", "AI"}}, {"Changeling Studio", {"Images", "Video", "AI"}}, {"Mimic", {"Images", "Video", "AI"}}, {"Firmament", {"Images", "3D", "AI"}}, {"Hymnal", {"Audio", "AI"}}, {"Bathos", {"Images", "AI"}}, {"CRUSH", {"Tools"}}};
     for (auto& a : v) {
         for (int i = 0; i < (int)(sizeof ORDER / sizeof ORDER[0]); ++i) if (a.name == ORDER[i]) a.order = i;
         for (const auto& c : CATS) if (a.name == c.first) a.categories = c.second;
@@ -285,6 +290,12 @@ static std::string now() {
 // what's on this PC, for one app (call with mtx held)
 static void scanInstalled(App& a, const std::map<std::string, Record>& rec) {
     a.folder = appFolder(a.name);
+    // an app that runs from where it is (its repo, with its own Python): there, when its exe is
+    for (size_t s = 0, e; s < a.localDirs.size(); s = e + 1) {
+        e = a.localDirs.find(';', s); if (e == std::string::npos) e = a.localDirs.size();
+        const std::string d = a.localDirs.substr(s, e - s);
+        if (!d.empty() && isFile(fs::u8path(d) / fs::u8path(a.exe))) { a.folder = d; break; }
+    }
     a.version.clear(); a.guessed = false; a.viaSetup = false; a.machineWide = false; a.uninstaller.clear();
     SetupEntry se;
     if (findSetup(a.appId, se) && isFile(fs::u8path(se.folder) / fs::u8path(a.exe))) {
