@@ -68,6 +68,10 @@ static std::vector<App> builtIn() {
     ae.repo = "CursedPrograms/AetherCanvas-AI"; ae.exe = "AetherCanvas.exe"; ae.localDirs = "C:\\cc\\AetherCanvas-AI;D:\\cc\\AetherCanvas-AI";
     add("Mimic", "Mimic-win64.zip", "One person's face onto a picture or a video.",
         "https://raw.githubusercontent.com/CursedPrograms/Mimic/main/assets/logo.png", "In Chimera: Filter > Mimic", false);
+    add("Arachne", "Arachne-win64.zip", "Pictures into clean vector art (SVG), or painted from words first and then traced.",
+        "https://raw.githubusercontent.com/CursedPrograms/Arachne/main/assets/logo.png", "", false);
+    add("Inoculant", "Inoculant-win64.zip", "Poisons and antidotes for your own pictures: cloak faces against face recognition and swaps, and test it.",
+        "https://raw.githubusercontent.com/CursedPrograms/Inoculant/main/assets/logo.png", "", false);
     // a command-line tool: its own installer (per user) puts it on the PATH and adds Explorer's right-click entries
     add("CRUSH", "CRUSH-*-win64-portable.zip", "A file compressor, written from scratch, for the command line and Explorer.",
         "https://raw.githubusercontent.com/CursedPrograms/CRUSH/main/assets/logo.png", "In Explorer: right-click > Add to CRUSH archive", false);
@@ -95,8 +99,8 @@ static std::vector<App> builtIn() {
     add("Demiurge", "Demiurge-win64.zip", "Make worlds: a 2D and 3D game engine with C#, built on Godot Engine 4.7.",
         "https://raw.githubusercontent.com/CursedPrograms/Demiurge/main/misc/demiurge/logo.png", "", false);
     // big to small, and the kinds of app (the launcher's filters)
-    static const char* ORDER[] = {"Chimera", "Demiurge", "Diorama", "Pygmalion", "Terminus", "AetherCanvas AI", "Changeling Studio", "Mimic", "Firmament", "Hymnal", "Bathos", "CRUSH"};
-    static const std::vector<std::pair<const char*, std::vector<std::string>>> CATS = {{"Chimera", {"Images"}}, {"Demiurge", {"Games", "3D"}}, {"Diorama", {"AR", "Games", "3D"}}, {"Pygmalion", {"3D"}}, {"Terminus", {"3D"}}, {"AetherCanvas AI", {"Images", "Video", "AI"}}, {"Changeling Studio", {"Images", "Video", "AI"}}, {"Mimic", {"Images", "Video", "AI"}}, {"Firmament", {"Images", "3D", "AI"}}, {"Hymnal", {"Audio", "AI"}}, {"Bathos", {"Images", "AI"}}, {"CRUSH", {"Tools"}}};
+    static const char* ORDER[] = {"Chimera", "Demiurge", "Diorama", "Pygmalion", "Terminus", "AetherCanvas AI", "Changeling Studio", "Mimic", "Arachne", "Inoculant", "Firmament", "Hymnal", "Bathos", "CRUSH"};
+    static const std::vector<std::pair<const char*, std::vector<std::string>>> CATS = {{"Chimera", {"Images"}}, {"Demiurge", {"Games", "3D"}}, {"Diorama", {"AR", "Games", "3D"}}, {"Pygmalion", {"3D"}}, {"Terminus", {"3D"}}, {"AetherCanvas AI", {"Images", "Video", "AI"}}, {"Changeling Studio", {"Images", "Video", "AI"}}, {"Mimic", {"Images", "Video", "AI"}}, {"Inoculant", {"Images", "AI", "Tools"}}, {"Arachne", {"Images", "AI"}}, {"Firmament", {"Images", "3D", "AI"}}, {"Hymnal", {"Audio", "AI"}}, {"Bathos", {"Images", "AI"}}, {"CRUSH", {"Tools"}}};
     for (auto& a : v) {
         for (int i = 0; i < (int)(sizeof ORDER / sizeof ORDER[0]); ++i) if (a.name == ORDER[i]) a.order = i;
         for (const auto& c : CATS) if (a.name == c.first) a.categories = c.second;
