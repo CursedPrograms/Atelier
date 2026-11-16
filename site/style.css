@@ -120,3 +120,11 @@ footer p { margin: 4px 0; }
 .suite .grid { margin-top: 10px; }
 .splash { max-width: 640px; margin: 22px auto 0; }
 
+/* minimum requirements */
+#requirements { margin-top: 32px; }
+.reqs { width: 100%; border-collapse: collapse; margin-top: 8px; }
+.reqs th, .reqs td { padding: 6px 10px; text-align: left; vertical-align: top;
+  border-bottom: 1px solid var(--line, var(--border, #3a3a3a)); }
+.reqs th { width: 9em; color: var(--text); font-weight: 600; white-space: nowrap; }
+.reqs td { color: var(--dim, var(--text)); }
+@media (max-width: 600px) { .reqs th { width: auto; white-space: normal; } }

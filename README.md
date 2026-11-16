@@ -39,6 +39,17 @@ other as plugins: Chimera's **Filter > Bathos** and **Filter > Mimic** use the B
 
 <p align="center"><img src="images/splash.png" alt="The launcher's splash" width="480"></p>
 
+### Minimum requirements
+
+| | |
+| --- | --- |
+| **System** | Windows 10 or 11, 64-bit |
+| **Processor** | any 64-bit processor |
+| **Memory** | 4 GB RAM |
+| **Graphics** | any graphics card with OpenGL 3.0 |
+| **Disk** | 5 MB for the launcher, plus each app you install (see its own page) |
+| **Internet** | to download the apps |
+
 ### Install
 
 Download **Atelier-Launcher-win64.zip** from [Releases](https://github.com/CursedPrograms/Atelier/releases), unzip
