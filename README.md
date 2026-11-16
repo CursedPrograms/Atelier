@@ -13,7 +13,6 @@
 - https://github.com/CursedPrograms/Terminus
 - https://github.com/CursedPrograms/Mosaic-Mask
 - https://github.com/CursedPrograms/Spatiality
-- https://github.com/CursedPrograms/Acacia-GameEngine
 
 ## The Atelier launcher
 
