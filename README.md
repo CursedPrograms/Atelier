@@ -1,17 +1,19 @@
 # Atelier
 ### Creative & Studio Suite
 
-- https://github.com/CursedPrograms/AetherCanvas-AI
-- https://github.com/CursedPrograms/Changeling-Studio
-- https://github.com/CursedPrograms/Firmament
-- https://github.com/CursedPrograms/Chimera
-- https://github.com/CursedPrograms/Diorama
-- https://github.com/CursedPrograms/Bathos
-- https://github.com/CursedPrograms/Mimic
-- https://github.com/CursedPrograms/CRUSH
-- https://github.com/CursedPrograms/Hymnal
-- https://github.com/CursedPrograms/Terminus
-- https://github.com/CursedPrograms/Mosaic-Mask
+| | App | What it does |
+|:-:|---|---|
+| <img src="logos/suite/aethercanvas-ai.png" width="64" alt="AetherCanvas AI"> | [**AetherCanvas AI**](https://github.com/CursedPrograms/AetherCanvas-AI) | Pictures and video from words, on your own PC. Text to image, image to image, inpainting, upscaling and video in one window, with ComfyUI and Python doing the work underneath. |
+| <img src="logos/suite/changeling-studio.png" width="64" alt="Changeling Studio"> | [**Changeling Studio**](https://github.com/CursedPrograms/Changeling-Studio) | Every Changeling in one window: face swap on photos, videos and the webcam, makeup, hair and beards, age and more, each effect a set of sliders. |
+| <img src="logos/suite/firmament.png" width="64" alt="Firmament"> | [**Firmament**](https://github.com/CursedPrograms/Firmament) | 360° skyboxes from a prompt. Look round them, repair the seam, upscale them and export cube maps for games and 3D scenes. |
+| <img src="logos/suite/chimera.png" width="64" alt="Chimera"> | [**Chimera**](https://github.com/CursedPrograms/Chimera) | A layer-based image editor: layers, masks, blend modes, filters and vector paths. Bathos and Mimic plug into its Filter menu. |
+| <img src="logos/suite/diorama.png" width="64" alt="Diorama"> | [**Diorama**](https://github.com/CursedPrograms/Diorama) | An augmented-reality engine made like Unity: scenes on markers, tables, floors and walls, scripted in JavaScript and built into games for a phone's browser or a Windows player. |
+| <img src="logos/suite/bathos.png" width="64" alt="Bathos"> | [**Bathos**](https://github.com/CursedPrograms/Bathos) | A picture in, its depth map out: near is bright, far is dark. For 3D photos, parallax, fog and focus effects. |
+| <img src="logos/suite/mimic.png" width="64" alt="Mimic"> | [**Mimic**](https://github.com/CursedPrograms/Mimic) | One person's face onto a picture or a video, matched to the light and the expression. |
+| <img src="logos/suite/crush.png" width="64" alt="CRUSH"> | [**CRUSH**](https://github.com/CursedPrograms/CRUSH) | A file compressor written from scratch, for the command line and Explorer's right-click menu. |
+| <img src="logos/suite/hymnal.png" width="64" alt="Hymnal"> | [**Hymnal**](https://github.com/CursedPrograms/Hymnal) | Whole songs, with vocals, from a style: lyrics written for you, covers, remixes, stems, tempo and key. |
+| <img src="logos/suite/terminus.png" width="64" alt="Terminus"> | [**Terminus**](https://github.com/CursedPrograms/Terminus) | Photos to a textured 3D model: photogrammetry in three steps, out as GLB, OBJ or STL. |
+| <img src="logos/suite/mosaic-mask.png" width="64" alt="Mosaic Mask"> | [**Mosaic Mask**](https://github.com/CursedPrograms/Mosaic-Mask) | A disguise for video calls: your face as a shifting mosaic of AI-generated strangers, sent to Zoom, Teams, Discord or Meet as an ordinary camera. |
 
 ## The Atelier launcher
 

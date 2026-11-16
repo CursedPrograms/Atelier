@@ -117,6 +117,6 @@ footer p { margin: 4px 0; }
 .app h2 a { color: var(--pink); text-decoration: none; }
 .app .note { margin-top: 6px; color: var(--dim); font-size: 14px; }
 .suite { margin-top: 24px; }
-.suite ul { columns: 2; color: var(--dim); padding-left: 20px; }
+.suite .grid { margin-top: 10px; }
 .splash { max-width: 640px; margin: 22px auto 0; }
-@media (max-width: 560px) { .suite ul { columns: 1; } }
+
