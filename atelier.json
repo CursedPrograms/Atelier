@@ -145,6 +145,17 @@
       "categories": [
         "Tools"
       ]
+    },
+    {
+      "name": "Arachne",
+      "repo": "CursedPrograms/Arachne",
+      "asset": "Arachne-win64.zip",
+      "exe": "Arachne.exe",
+      "description": "Pictures into clean vector art (SVG): smooth curves and flat shapes, or painted from words first and then traced.",
+      "logo": "https://raw.githubusercontent.com/CursedPrograms/Arachne/main/assets/logo.png",
+      "categories": [
+        "Images"
+      ]
     }
   ]
 }
