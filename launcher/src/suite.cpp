@@ -52,7 +52,7 @@ static std::vector<App> builtIn() {
         a.description = desc; a.logo = logo; a.plugin = plugin; a.soon = soon;
         v.push_back(a);
     };
-    add("Chimera", "Chimera-win64.zip", "A layer-based image editor: layers, masks, blend modes and filters.",
+    add("Chimera", "Chimera-win64.zip", "A layer-based image editor: layers, masks, blend modes, filters and the healing tools.",
         "https://raw.githubusercontent.com/CursedPrograms/Chimera/main/cpp/assets/logo.png", "", false);
     add("Bathos", "Bathos-win64.zip", "A picture in, its depth map out. Near is bright, far is dark.",
         "https://raw.githubusercontent.com/CursedPrograms/Bathos/main/assets/logo.png", "In Chimera: Filter > Bathos", false);
@@ -73,6 +73,11 @@ static std::vector<App> builtIn() {
     add("Inoculant", "Inoculant-win64.zip", "Poisons and antidotes for your own pictures: cloak faces against face recognition and swaps, and test it.",
         "https://raw.githubusercontent.com/CursedPrograms/Inoculant/main/assets/logo.png", "", false);
     // a command-line tool: its own installer (per user) puts it on the PATH and adds Explorer's right-click entries
+    // a disguise for video calls: the program's name has no space
+    add("Mosaic Mask", "MosaicMask-win64.zip", "A disguise for video calls: your face as a shifting mosaic of AI-generated strangers, sent to the call as a camera.",
+        "https://raw.githubusercontent.com/CursedPrograms/Mosaic-Mask/main/cpp/assets/logo.png", "", false);
+    App& mm = v.back();
+    mm.repo = "CursedPrograms/Mosaic-Mask"; mm.exe = "MosaicMask.exe";
     add("CRUSH", "CRUSH-*-win64-portable.zip", "A file compressor, written from scratch, for the command line and Explorer.",
         "https://raw.githubusercontent.com/CursedPrograms/CRUSH/main/assets/logo.png", "In Explorer: right-click > Add to CRUSH archive", false);
     App& c = v.back();
@@ -87,7 +92,7 @@ static std::vector<App> builtIn() {
     t.setup = "Simulacrum-setup.exe"; t.setupArgs = "/VERYSILENT /SUPPRESSMSGBOXES /NORESTART";
     t.appId = "{308B2EC6-6095-4E43-93C9-CF43455F03BA}";
     // people in 3D: MakeHuman remade; its own installer (per user, MakeHuman's assets inside); the zip works too
-    add("Pygmalion", "Pygmalion-win64.zip", "People in 3D with sliders: MakeHuman remade. Shape, dress, pose, render, and export with the skeleton.",
+    add("Pygmalion", "Pygmalion-win64.zip", "People in 3D with sliders: MakeHuman remade. Shape them with sliders or by dragging the body, dress, pose, render, export.",
         "https://raw.githubusercontent.com/CursedPrograms/Pygmalion/main/assets/logo.png", "", false);
     App& pg = v.back();
     pg.setup = "Pygmalion-setup.exe"; pg.setupArgs = "/VERYSILENT /SUPPRESSMSGBOXES /NORESTART";
@@ -99,8 +104,8 @@ static std::vector<App> builtIn() {
     add("Demiurge", "Demiurge-win64.zip", "Make worlds: a 2D and 3D game engine with C#, built on Godot Engine 4.7.",
         "https://raw.githubusercontent.com/CursedPrograms/Demiurge/main/misc/demiurge/logo.png", "", false);
     // big to small, and the kinds of app (the launcher's filters)
-    static const char* ORDER[] = {"Chimera", "Demiurge", "Diorama", "Pygmalion", "Simulacrum", "AetherCanvas AI", "Changeling Studio", "Mimic", "Arachne", "Inoculant", "Firmament", "Hymnal", "Bathos", "CRUSH"};
-    static const std::vector<std::pair<const char*, std::vector<std::string>>> CATS = {{"Chimera", {"Images"}}, {"Demiurge", {"Games", "3D"}}, {"Diorama", {"AR", "Games", "3D"}}, {"Pygmalion", {"3D"}}, {"Simulacrum", {"3D"}}, {"AetherCanvas AI", {"Images", "Video", "AI"}}, {"Changeling Studio", {"Images", "Video", "AI"}}, {"Mimic", {"Images", "Video", "AI"}}, {"Inoculant", {"Images", "AI", "Tools"}}, {"Arachne", {"Images", "AI"}}, {"Firmament", {"Images", "3D", "AI"}}, {"Hymnal", {"Audio", "AI"}}, {"Bathos", {"Images", "AI"}}, {"CRUSH", {"Tools"}}};
+    static const char* ORDER[] = {"Chimera", "Demiurge", "Diorama", "Pygmalion", "Simulacrum", "AetherCanvas AI", "Changeling Studio", "Mimic", "Arachne", "Inoculant", "Mosaic Mask", "Firmament", "Hymnal", "Bathos", "CRUSH"};
+    static const std::vector<std::pair<const char*, std::vector<std::string>>> CATS = {{"Chimera", {"Images"}}, {"Demiurge", {"Games", "3D"}}, {"Diorama", {"AR", "Games", "3D"}}, {"Pygmalion", {"3D"}}, {"Simulacrum", {"3D"}}, {"AetherCanvas AI", {"Images", "Video", "AI"}}, {"Changeling Studio", {"Images", "Video", "AI"}}, {"Mimic", {"Images", "Video", "AI"}}, {"Inoculant", {"Images", "AI", "Tools"}}, {"Mosaic Mask", {"Video", "AI"}}, {"Arachne", {"Images", "AI"}}, {"Firmament", {"Images", "3D", "AI"}}, {"Hymnal", {"Audio", "AI"}}, {"Bathos", {"Images", "AI"}}, {"CRUSH", {"Tools"}}};
     for (auto& a : v) {
         for (int i = 0; i < (int)(sizeof ORDER / sizeof ORDER[0]); ++i) if (a.name == ORDER[i]) a.order = i;
         for (const auto& c : CATS) if (a.name == c.first) a.categories = c.second;
