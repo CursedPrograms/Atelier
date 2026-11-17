@@ -570,11 +570,12 @@ static void shortcuts(const App& a, bool make) {
     for (const auto& id : {FOLDERID_Programs, FOLDERID_Desktop}) {
         const fs::path d = knownFolder(id);
         if (d.empty()) continue;
-        const std::string suffix = console ? " command prompt" : "";
-        const fs::path legacy = d / fs::u8path(a.name + suffix + ".lnk");
-        const fs::path lnk = d / fs::u8path("Atelier - " + a.name + suffix + ".lnk");
+        const fs::path legacy = d / fs::u8path(a.name + ".lnk");
+        const fs::path legacyConsole = d / fs::u8path(a.name + " command prompt.lnk");
+        const fs::path lnk = d / fs::u8path("Atelier - " + a.name + ".lnk");
         std::error_code ec;
         fs::remove(legacy, ec);
+        if (console) fs::remove(legacyConsole, ec);
         if (!make) { fs::remove(lnk, ec); continue; }
         if (console) makeShortcut(lnk, cmdExe(), knownFolder(FOLDERID_Documents), a.name + ": " + a.description,
                                   L"/k \"\"" + exe.wstring() + L"\" --help\"", exe);
