@@ -81,11 +81,11 @@ static std::vector<App> builtIn() {
     add("Hymnal", "Hymnal-win64.zip", "Whole songs, with vocals, from a style: lyrics written for you, covers, remixes, stems, tempo and key.",
         "https://raw.githubusercontent.com/CursedPrograms/Hymnal/main/assets/logo.png", "", false);
     // photos to 3D: its own installer (per user, AliceVision inside); the zip works too
-    add("Terminus", "Terminus-win64.zip", "Photos to a textured 3D model: AliceVision's photogrammetry in three steps, GLB, OBJ and STL out.",
-        "https://raw.githubusercontent.com/CursedPrograms/Terminus/main/assets/logo.png", "", false);
+    add("Simulacrum", "Simulacrum-win64.zip", "Photos to a textured 3D model: AliceVision's photogrammetry in three steps, GLB, OBJ and STL out.",
+        "https://raw.githubusercontent.com/CursedPrograms/Simulacrum/main/assets/logo.png", "", false);
     App& t = v.back();
-    t.setup = "Terminus-setup.exe"; t.setupArgs = "/VERYSILENT /SUPPRESSMSGBOXES /NORESTART";
-    t.appId = "{9B6E2D4C-7A1F-4E3B-8C5D-2F0A6B1E9D73}";
+    t.setup = "Simulacrum-setup.exe"; t.setupArgs = "/VERYSILENT /SUPPRESSMSGBOXES /NORESTART";
+    t.appId = "{308B2EC6-6095-4E43-93C9-CF43455F03BA}";
     // people in 3D: MakeHuman remade; its own installer (per user, MakeHuman's assets inside); the zip works too
     add("Pygmalion", "Pygmalion-win64.zip", "People in 3D with sliders: MakeHuman remade. Shape, dress, pose, render, and export with the skeleton.",
         "https://raw.githubusercontent.com/CursedPrograms/Pygmalion/main/assets/logo.png", "", false);
@@ -99,8 +99,8 @@ static std::vector<App> builtIn() {
     add("Demiurge", "Demiurge-win64.zip", "Make worlds: a 2D and 3D game engine with C#, built on Godot Engine 4.7.",
         "https://raw.githubusercontent.com/CursedPrograms/Demiurge/main/misc/demiurge/logo.png", "", false);
     // big to small, and the kinds of app (the launcher's filters)
-    static const char* ORDER[] = {"Chimera", "Demiurge", "Diorama", "Pygmalion", "Terminus", "AetherCanvas AI", "Changeling Studio", "Mimic", "Arachne", "Inoculant", "Firmament", "Hymnal", "Bathos", "CRUSH"};
-    static const std::vector<std::pair<const char*, std::vector<std::string>>> CATS = {{"Chimera", {"Images"}}, {"Demiurge", {"Games", "3D"}}, {"Diorama", {"AR", "Games", "3D"}}, {"Pygmalion", {"3D"}}, {"Terminus", {"3D"}}, {"AetherCanvas AI", {"Images", "Video", "AI"}}, {"Changeling Studio", {"Images", "Video", "AI"}}, {"Mimic", {"Images", "Video", "AI"}}, {"Inoculant", {"Images", "AI", "Tools"}}, {"Arachne", {"Images", "AI"}}, {"Firmament", {"Images", "3D", "AI"}}, {"Hymnal", {"Audio", "AI"}}, {"Bathos", {"Images", "AI"}}, {"CRUSH", {"Tools"}}};
+    static const char* ORDER[] = {"Chimera", "Demiurge", "Diorama", "Pygmalion", "Simulacrum", "AetherCanvas AI", "Changeling Studio", "Mimic", "Arachne", "Inoculant", "Firmament", "Hymnal", "Bathos", "CRUSH"};
+    static const std::vector<std::pair<const char*, std::vector<std::string>>> CATS = {{"Chimera", {"Images"}}, {"Demiurge", {"Games", "3D"}}, {"Diorama", {"AR", "Games", "3D"}}, {"Pygmalion", {"3D"}}, {"Simulacrum", {"3D"}}, {"AetherCanvas AI", {"Images", "Video", "AI"}}, {"Changeling Studio", {"Images", "Video", "AI"}}, {"Mimic", {"Images", "Video", "AI"}}, {"Inoculant", {"Images", "AI", "Tools"}}, {"Arachne", {"Images", "AI"}}, {"Firmament", {"Images", "3D", "AI"}}, {"Hymnal", {"Audio", "AI"}}, {"Bathos", {"Images", "AI"}}, {"CRUSH", {"Tools"}}};
     for (auto& a : v) {
         for (int i = 0; i < (int)(sizeof ORDER / sizeof ORDER[0]); ++i) if (a.name == ORDER[i]) a.order = i;
         for (const auto& c : CATS) if (a.name == c.first) a.categories = c.second;

@@ -52,15 +52,15 @@
       ]
     },
     {
-      "name": "Terminus",
-      "repo": "CursedPrograms/Terminus",
-      "asset": "Terminus-win64.zip",
-      "setup": "Terminus-setup.exe",
+      "name": "Simulacrum",
+      "repo": "CursedPrograms/Simulacrum",
+      "asset": "Simulacrum-win64.zip",
+      "setup": "Simulacrum-setup.exe",
       "setupArgs": "/VERYSILENT /SUPPRESSMSGBOXES /NORESTART",
-      "appId": "{9B6E2D4C-7A1F-4E3B-8C5D-2F0A6B1E9D73}",
-      "exe": "Terminus.exe",
+      "appId": "{308B2EC6-6095-4E43-93C9-CF43455F03BA}",
+      "exe": "Simulacrum.exe",
       "description": "Photos to a textured 3D model: AliceVision's photogrammetry in three steps, GLB, OBJ and STL out.",
-      "logo": "https://raw.githubusercontent.com/CursedPrograms/Terminus/main/assets/logo.png",
+      "logo": "https://raw.githubusercontent.com/CursedPrograms/Simulacrum/main/assets/logo.png",
       "categories": [
         "3D"
       ]
