@@ -561,7 +561,7 @@ static bool makeShortcut(const fs::path& lnk, const fs::path& target, const fs::
     return ok;
 }
 
-// an app with a window: <App>.lnk on the Start menu and the Desktop. A command-line tool: "<App> command prompt",
+// an app with a window: "Atelier - <App>.lnk" on the Start menu and the Desktop. A command-line tool: "Atelier - <App> command prompt",
 // a console with it ready (as CRUSH's own installer makes). An app its own installer put in gets none from here.
 static void shortcuts(const App& a, bool make) {
     if (a.launch == "none") return;
@@ -570,8 +570,11 @@ static void shortcuts(const App& a, bool make) {
     for (const auto& id : {FOLDERID_Programs, FOLDERID_Desktop}) {
         const fs::path d = knownFolder(id);
         if (d.empty()) continue;
-        const fs::path lnk = d / fs::u8path(a.name + (console ? " command prompt.lnk" : ".lnk"));
+        const std::string suffix = console ? " command prompt" : "";
+        const fs::path legacy = d / fs::u8path(a.name + suffix + ".lnk");
+        const fs::path lnk = d / fs::u8path("Atelier - " + a.name + suffix + ".lnk");
         std::error_code ec;
+        fs::remove(legacy, ec);
         if (!make) { fs::remove(lnk, ec); continue; }
         if (console) makeShortcut(lnk, cmdExe(), knownFolder(FOLDERID_Documents), a.name + ": " + a.description,
                                   L"/k \"\"" + exe.wstring() + L"\" --help\"", exe);
@@ -783,8 +786,8 @@ static void doUninstall(const Work& w) {
         for (int i = 0; i < 40 && isFile(fs::u8path(a.folder) / fs::u8path(a.exe)); ++i) Sleep(250);   // it finishes from a copy of itself
     } else {
         fs::remove_all(fs::u8path(a.folder), ec);
-        shortcuts(a, false);
     }
+    shortcuts(a, false);
     std::lock_guard<std::mutex> g(mtx);
     auto rec = readInstalled();
     rec.erase(a.name);
