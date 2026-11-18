@@ -13,13 +13,14 @@
 | <img src="logos/suite/inoculant.png" width="64" alt="Inoculant"> | [**Inoculant**](https://github.com/CursedPrograms/Inoculant) | Poisons and antidotes for your own pictures: cloaks the faces in them against face recognition and face swaps, and tests how much of a cloak survives. |
 | <img src="logos/suite/arachne.png" width="64" alt="Arachne"> | [**Arachne**](https://github.com/CursedPrograms/Arachne) | Pictures into clean vector art (SVG): traced into smooth curves and flat shapes, or painted from words first and then traced. |
 | <img src="logos/suite/crush.png" width="64" alt="CRUSH"> | [**CRUSH**](https://github.com/CursedPrograms/CRUSH) | A file compressor written from scratch, for the command line and Explorer's right-click menu. |
+| <img src="logos/suite/polyhymnia.png" width="64" alt="Polyhymnia"> | [**Polyhymnia**](https://github.com/CursedPrograms/Polyhymnia) | A Pro Tools-style music studio: import audio, edit it on tracks, mix it with faders and built-in effects, record, and bounce to WAV, FLAC or MP3. Hymnal makes songs; Polyhymnia arranges and mixes them. |
 | <img src="logos/suite/hymnal.png" width="64" alt="Hymnal"> | [**Hymnal**](https://github.com/CursedPrograms/Hymnal) | Whole songs, with vocals, from a style: lyrics written for you, covers, remixes, stems, tempo and key. |
 | <img src="logos/suite/simulacrum.png" width="64" alt="Simulacrum"> | [**Simulacrum**](https://github.com/CursedPrograms/Simulacrum) | Photos to a textured 3D model: photogrammetry in three steps, out as GLB, OBJ or STL. |
 | <img src="logos/suite/mosaic-mask.png" width="64" alt="Mosaic Mask"> | [**Mosaic Mask**](https://github.com/CursedPrograms/Mosaic-Mask) | A disguise for video calls: your face as a shifting mosaic of AI-generated strangers, sent to Zoom, Teams, Discord or Meet as an ordinary camera. |
 | <img src="logos/suite/pygmalion.png" width="64" alt="Pygmalion"> | [**Pygmalion**](https://github.com/CursedPrograms/Pygmalion) | People in 3D with sliders: MakeHuman remade. Shape them with sliders or by dragging the body itself, dress, pose, render, and export with the skeleton. |
 | <img src="logos/suite/demiurge.png" width="64" alt="Demiurge"> | [**Demiurge**](https://github.com/CursedPrograms/Demiurge) | Make worlds: a 2D and 3D game engine with C#, built on Godot Engine 4.7. |
 
-Coming: **Galatea**, a picture or a few words into a textured 3D model (GLB, OBJ).
+Coming: **Morpheus**, motion graphics and compositing (layers, keyframes and effects, After Effects' kind), and **Galatea**, a picture or a few words into a textured 3D model (GLB, OBJ).
 
 ## The Atelier launcher
 
