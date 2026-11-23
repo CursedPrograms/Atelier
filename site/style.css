@@ -128,3 +128,9 @@ footer p { margin: 4px 0; }
 .reqs th { width: 9em; color: var(--text); font-weight: 600; white-space: nowrap; }
 .reqs td { color: var(--dim, var(--text)); }
 @media (max-width: 600px) { .reqs th { width: auto; white-space: normal; } }
+
+.coming {
+  margin: 18px 0 0;
+  color: #9a9a9a;
+  line-height: 1.6;
+}
